@@ -1,8 +1,11 @@
 package com.saculo.internship.product;
 
-import java.util.HashMap;
+import com.saculo.internship.product.model.Product;
 
-public class ProductRepositoryImpl implements ProductRepositiory {
+import java.util.HashMap;
+import java.util.Optional;
+
+public class InMemoryProductRepository implements ProductRepository {
 
     private HashMap<String, Product> products = new HashMap<>();
 
@@ -16,8 +19,8 @@ public class ProductRepositoryImpl implements ProductRepositiory {
         products.remove(barCode);
     }
 
-    public Product get(String barCode) {
-        return products.get(barCode);
+    public Optional<Product> get(String barCode) {
+        return Optional.ofNullable(products.get(barCode));
     }
 
     public boolean exists(String barCode) {

@@ -1,9 +1,9 @@
-package com.saculo.internship.product;
+package com.saculo.internship.product.model;
 
 public class Product {
 
-    private String name;
     private String barCode;
+    private String name;
     private Double price;
 
     public Product(String name, String barCode, Double price) {
@@ -22,5 +22,13 @@ public class Product {
 
     public Double getPrice() {
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
